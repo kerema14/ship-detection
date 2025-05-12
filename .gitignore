@@ -1,4 +1,4 @@
-/annotations
-/images
-/train
-/val
+annotations/
+images/
+train/
+val/
