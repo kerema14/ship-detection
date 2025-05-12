@@ -1,1 +1,0 @@
-python train_faster-rcnn-inception-resnet-v2.py --train_images train/images  --train_annotations train/annotations --val_images val/images --val_annotations val/annotations --classes ship  --batch_size 16 --lr 0.005 --epochs 15 --output my_model.pth
