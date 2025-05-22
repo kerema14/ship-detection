@@ -1,0 +1,7 @@
+[submodule "detr_branch/detr"]
+	path = detr_branch/detr
+	url = https://github.com/kerema14/detr.git
+
+[submodule "voc2coco"]
+    path = voc2coco
+	https://github.com/yukkyo/voc2coco
