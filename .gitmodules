@@ -4,4 +4,4 @@
 
 [submodule "voc2coco"]
     path = voc2coco
-	url = https://github.com/yukkyo/voc2coco
+	url = https://github.com/yukkyo/voc2coco.git
