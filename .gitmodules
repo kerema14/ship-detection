@@ -5,3 +5,7 @@
 [submodule "voc2coco"]
     path = voc2coco
 	url = https://github.com/yukkyo/voc2coco.git
+
+[submodule "retinanet_branch/pytorch-retinanet"]
+	path = retinanet_branch/pytorch-retinanet
+	url = https://github.com/yhenon/pytorch-retinanet.git
