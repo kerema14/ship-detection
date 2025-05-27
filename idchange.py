@@ -2,7 +2,7 @@ import json
 import re
 
 # Load your JSON file
-with open(r'C:\Users\kerem\OneDrive\Masaüstü\Politechnika Warszawska\EARIN - Intro to Artificial Intelligence\ship-detection\detr_branch\cocoset\annotations\val.json', 'r') as f:
+with open(r'C:\Users\kerem\OneDrive\Masaüstü\Politechnika Warszawska\EARIN - Intro to Artificial Intelligence\ship-detection\test.json', 'r') as f:
     data = json.load(f)
 
 # Build a mapping from old image id to new integer id
