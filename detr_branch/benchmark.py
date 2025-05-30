@@ -27,7 +27,7 @@ model.to(device)
 model.eval()
 
 # Load the COCO dataset and annotations
-coco_gt = COCO('test/test.json')
+coco_gt = COCO('test/instances_test2017.json')
 coco_dt = []
 
 # Get image ids
