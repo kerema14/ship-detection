@@ -2,10 +2,9 @@ import subprocess
 
 # Define the command as a list of strings
 command = [
-    "python", "coco_validation.py",
+    "python", "validation.py",
     
     "--coco_path", "../coco",  
-    "--resume", "model_final.pt",
     "--model_path", "model_final.pt",
     
 ]

@@ -8,4 +8,4 @@
 
 [submodule "retinanet_branch/pytorch-retinanet"]
 	path = retinanet_branch/pytorch-retinanet
-	url = https://github.com/yhenon/pytorch-retinanet
+	url = https://github.com/kerema14/pytorch-retinanet

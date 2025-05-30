@@ -6,3 +6,4 @@ test/
 retinanet_branch/custom/
 EARIN General Project Instruction 2025L.pdf
 detr-r50_no-class-head.pth
+*.partial
