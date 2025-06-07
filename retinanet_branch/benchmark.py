@@ -5,7 +5,7 @@ command = [
     "python", "validation.py",
     
     "--coco_path", "../coco",  
-    "--model_path", "model_final.pt",
+    "--model_path", "outputs/coco_retinanet_161.pt",
     
 ]
 

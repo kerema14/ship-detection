@@ -5,6 +5,7 @@ command = [
     "python", "pytorch-retinanet/visualize.py",
     "--dataset", 'coco',
     "--coco_path", "coco",  
+    "--grid_size", "10",
     
     "--model", "pytorch-retinanet/outputs/coco_retinanet_106.pt",
     
