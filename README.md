@@ -23,15 +23,15 @@ Three object detection architectures were implemented and compared:
 - **Source**: [Ship Detection Dataset on Kaggle](https://www.kaggle.com/datasets/andrewmvd/ship-detection)
 - **Format**: PASCAL VOC (converted to COCO and YOLO where needed)
 - **Classes**: Single class - `boat`
-- **Total Images**: 661
+- **Total Images**: 621
 - **Splits**: 70% train / 15% val / 15% test
 
 ## 🛠️ Tools and Frameworks
 
 - PyTorch 2.3.1 + cu121
 - Ultralytics YOLOv8
-- yhenon’s RetinaNet fork
-- DETR (Facebook AI Research)
+- forked yhenon’s RetinaNet fork
+- forked DETR (Facebook AI Research)
 - OpenCV, Seaborn, Matplotlib
 - GitHub for version control
 
@@ -63,26 +63,57 @@ pip install -r requirements.txt
 ```
 
 ### 3. Train a model
-YOLOv8 (example):
+YOLOv8:
+use the `train.py` script in yolo_branch
+or
 ```bash
 cd yolo_branch
-yolo task=detect mode=train model=yolov8m.pt data=data.yaml epochs=150
+yolo detect train \
+  model=yolov8m.pt \
+  data=config.yaml \
+  epochs=150 \
+  imgsz=512 \
+  patience=35 \
+  batch=-1 \
+  device=0 \
+  seed=42 \
+  lr0=0.0001 \
+  weight_decay=0.0005
 ```
-or you can use the train.py script in yolo_branch
+
 
 DETR:
+first, run `detr_branch/get_checkpoint.py` to get the headless checkpoint, 
+then use the `train.py` script in detr_branch
+or
 ```bash
 cd detr_branch/detr
-python main.py --coco_path ../custom --epochs 300
+python main.py \
+  --dataset_file custom \
+  --coco_path ../custom/ \
+  --output_dir outputs \
+  --resume detr-r50_no-class-head.pth \
+  --num_classes 1 \
+  --epochs 300 \
+  --lr_drop 50 \
+  --lr_drop_rate 0.59234
 ```
-or you can use the train.py script in detr_branch
+
 
 RetinaNet:
+first, run `retinanet_branch/get_checkpoint.py` to get the headless checkpoint, 
+then use the train.py script in detr_branch
+use the `train_process.py` script in retinanet_branch
+or
 ```bash
 cd retinanet_branch/pytorch-retinanet
-python train.py --dataset coco --coco_path ../coco
+python train.py \
+  --dataset coco \
+  --coco_path ../coco \
+  --epochs 300 \
+  --depth 50
 ```
-or you can use the train_process.py in retinanet_branch 
+
 
 ### 4. Run inference
 See the `/runs/weights` for yolo, `/outputs` for detr and retinanet to see the outputted pytorch models after and during the training.
